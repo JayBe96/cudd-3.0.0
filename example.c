@@ -54,12 +54,10 @@ int main(int argc, char *argv[]) {
     DdNode *term1 = Cudd_bddAnd(gbm, x1, Cudd_Not(x2));
     DdNode *term2 = Cudd_bddAnd(gbm, Cudd_Not(x1), x3);
     y1 = Cudd_bddOr(gbm, term1, term2);
-    Cudd_Ref(y1);
     // Bdd 2 y = (x1 ∨ x3) ∧ (¬x2 ∨ x3)
     DdNode *term3 = Cudd_bddOr(gbm, x1, x3);
     DdNode *term4 = Cudd_bddOr(gbm, Cudd_Not(x2), x3);
     y2 =  Cudd_bddAnd(gbm, term3, term4);
-    Cudd_Ref(y2);
     // Prints to console wether the 2 bdds are equal.
     if (Cudd_bddLeq(gbm, y1, y2) == 1){
         printf("The 2 BDDs are equal.\n");
