@@ -4,7 +4,7 @@
 
 int main (int argc, char *argv[])
 {
-    FILE *fp = fopen("cudd_info.txt", "w");
+    FILE *fp = fopen("cudd_info_out.txt", "w");
     DdManager *gbm; /* Global BDD manager. */
     char filename[30];
     gbm = Cudd_Init(0,0,CUDD_UNIQUE_SLOTS,CUDD_CACHE_SLOTS,0); /* Initialize a new BDD manager. */
